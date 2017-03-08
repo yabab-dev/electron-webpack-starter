@@ -1,0 +1,22 @@
+{
+  "name": "electron-webpack-starter",
+  "version": "0.1.0",
+  "description": "Electron webpack starter",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd app && npm install",
+    "build": "node scripts/build",
+    "start": "node scripts/build && electron dist/app",
+    "package:linux": "export PLATFORM_TARGET=linux; node scripts/packager",
+    "package:mac": "export PLATFORM_TARGET=darwin; node scripts/packager",
+    "package:win": "export PLATFORM_TARGET=win32; node scripts/packager",
+    "package": "export PLATFORM_TARGET=linux,darwin,win32; node scripts/packager"
+  },
+  "author": "Simon Babay <simon@babay.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "electron-packager": "^8.5.2",
+    "fs-extra": "^2.0.0"
+  }
+}

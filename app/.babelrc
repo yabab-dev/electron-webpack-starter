@@ -1,0 +1,9 @@
+{
+  "presets": [
+    ["electron"]
+  ],
+  "plugins": [
+    "transform-runtime"
+  ],
+  "comments": false
+}

@@ -1,0 +1,3 @@
+build/**/*.js
+main.js
+electron/*.js
