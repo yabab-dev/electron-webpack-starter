@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const conf = require('../conf');
 
@@ -98,6 +99,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor']
     }),
-    new webpack.optimize.AggressiveMergingPlugin()
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new FriendlyErrorsWebpackPlugin(),
   ],
 }

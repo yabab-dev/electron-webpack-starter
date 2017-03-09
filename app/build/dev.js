@@ -29,4 +29,4 @@ function exit (code) {
   });
 }
 
-run(`./node_modules/.bin/webpack-dev-server --config build/webpack/dev --inline --hot --colors --port ${conf.dev.port}`, 'webpack');
+run(`./node_modules/.bin/webpack-dev-server --config build/webpack/dev --hot --inline --colors --port ${conf.dev.port} `, 'webpack');

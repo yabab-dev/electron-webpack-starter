@@ -44,7 +44,6 @@ function boot(config) {
   }
 
   const updatedAsar = getUpatedAsarPath();
-  console.log(updatedAsar);
 
   if (updatedAsar) {
     try {
