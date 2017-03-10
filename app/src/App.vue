@@ -5,8 +5,6 @@
 </template>
 
 <script>
-console.log('!');
-
 export default {
   name: 'app',
 };

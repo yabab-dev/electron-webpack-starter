@@ -33,6 +33,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
+      'vue': 'vue/dist/vue.common.js',
       'sau': '../electron/sau',
     },
   },
@@ -89,6 +90,10 @@ module.exports = {
           { loader: "sass-loader" },
         ],
       },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
     ]
   },
   externals: [
@@ -102,6 +107,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: package.productName || package.name || 'App',
+      template: 'src/index.html',
     }),
     new CopyWebpackPlugin([
       {
