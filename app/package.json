@@ -8,7 +8,7 @@
     "start": "node build/dev",
     "build:dev": "./node_modules/.bin/webpack --config build/webpack/dev.js",
     "build": "./node_modules/.bin/webpack --config build/webpack/prod.js",
-    "lint": "./node_modules/.bin/eslint --ext .html,.js ."
+    "lint": "./node_modules/.bin/eslint --ext .html,.vue,.js ."
   },
   "author": "Simon Babay <simon@babay.fr>",
   "license": "MIT",
