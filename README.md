@@ -5,6 +5,9 @@ Personnal starter to build electron apps.
 - Webpack with Babel & Sass (with HMR activated)
 - Electron packager
 - ASAR builder & Simple ASAR updater
+- Branches :
+  - `vue` : Starter for VueJS app
+  - `phaser` : Starter for a Phaser game
 
 ## Simple Asar Updater (SAU)
 @todo : description
@@ -13,9 +16,6 @@ Personnal starter to build electron apps.
 - SAU
   - Fallback URL
   - Replace request && request-progress
-- Branches
-  - VueJS
-  - Phaser
 
 ## License
 See `LICENSE` file
