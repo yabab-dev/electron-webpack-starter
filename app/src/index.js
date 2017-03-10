@@ -1,4 +1,20 @@
-// App entry point
+// Libs
+import Vue from 'vue';
+
+// Styles
 import '../scss/index.scss';
 
-document.body.innerHTML = '<h1>Electron Webpack Starter</h1>';
+// Router
+import router from './router';
+
+// Components
+import App from './App';
+
+// Start VueJS
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: { App },
+});
