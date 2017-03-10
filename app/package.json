@@ -35,12 +35,17 @@
     "style-loader": "^0.13.2",
     "tree-kill": "^1.1.0",
     "url-loader": "^0.5.8",
+    "vue-loader": "^11.1.4",
+    "vue-style-loader": "^2.0.3",
+    "vue-template-compiler": "^2.2.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
     "webpack-merge": "^3.0.0"
   },
   "dependencies": {
     "fs-extra": "^2.0.0",
-    "request-progress": "^3.0.0"
+    "request-progress": "^3.0.0",
+    "vue": "^2.2.2",
+    "vue-router": "^2.3.0"
   }
 }
