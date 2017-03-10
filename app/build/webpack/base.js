@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
+const EslintFriendlyFormatter = require('eslint-friendly-formatter');
+
 const conf = require('../conf');
 
 // Bundles entries
@@ -44,7 +46,7 @@ module.exports = {
           path.join(conf.app, 'src'),
         ],
         options: {
-          formatter: require('eslint-friendly-formatter')
+          formatter: EslintFriendlyFormatter,
         }
       },
       {
