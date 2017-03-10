@@ -52,7 +52,9 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: ['src']
+        include: [
+          path.join(conf.app, 'src')
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
