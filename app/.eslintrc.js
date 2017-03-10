@@ -6,8 +6,20 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
+  extends: [
+    'airbnb-base',
+  ],
   env: {
     browser: true,
   },
-  extends: 'airbnb-base',
+  plugins: [
+    'html',
+  ],
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: 'build/webpack/base.js',
+      }
+    }
+  },
 }
