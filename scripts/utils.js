@@ -1,9 +1,14 @@
 const path = require('path');
 const { exec } = require('child_process');
 
+// Exlcude packages (node & electron builtins)
+const excludeModules = require('builtin-modules');
+excludeModules.push('electron', 'original-fs');
+
 function modulesDependencies(modules) {
   let dependencies = [];
   modules.forEach(module => {
+    if (excludeModules.indexOf(module) >= 0) return;
     dependencies.push(module);
 
     const modulePath = path.join(__dirname, '../app/node_modules/' + module);
@@ -11,7 +16,9 @@ function modulesDependencies(modules) {
     let moduleDeps = [];
 
     for (var depModule in modulePackage.dependencies) {
-      moduleDeps.push(depModule);
+      if (excludeModules.indexOf(depModule) < 0) {
+        moduleDeps.push(depModule);
+      }
     }
 
     const subModules = modulesDependencies(moduleDeps);
