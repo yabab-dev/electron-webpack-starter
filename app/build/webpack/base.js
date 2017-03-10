@@ -10,6 +10,12 @@ const EslintFriendlyFormatter = require('eslint-friendly-formatter');
 
 const conf = require('../conf');
 
+// Phaser webpack config
+var phaserModule = path.join(conf.app, 'node_modules/phaser-ce/');
+var phaser = path.join(phaserModule, 'build/phaser.js');
+var pixi = path.join(phaserModule, 'build/pixi.js');
+var p2 = path.join(phaserModule, 'build/p2.js')
+
 // Bundles entries
 let entry = {
   vendor: conf.vendor,
@@ -34,10 +40,17 @@ module.exports = {
     extensions: ['.js', '.json'],
     alias: {
       'sau': '../electron/sau',
+      'pixi': pixi,
+      'p2': p2,
+      'phaser': phaser,
+      'phaser-ce': phaser,
     },
   },
   module: {
     rules: [
+      { test: /pixi\.js/, use: ['expose-loader?PIXI'] },
+      { test: /p2\.js/, use: ['expose-loader?p2'] },
+      { test: /phaser\.js$/, use: ['expose-loader?Phaser'] },
       {
         test: /\.(js|html)$/,
         loader: 'eslint-loader',

@@ -12,7 +12,10 @@ let conf = {
 
   // Modules to put in vendor bundle
   vendor: [
-    
+    'pixi',
+    'p2',
+    'phaser-ce',
+    'phaser-debug',
   ],
 
   // Modules to exclude from webpack
