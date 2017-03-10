@@ -12,7 +12,8 @@ let conf = {
 
   // Modules to put in vendor bundle
   vendor: [
-    
+    'vue',
+    'vue-router',
   ],
 
   // Modules to exclude from webpack
