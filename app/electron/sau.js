@@ -1,6 +1,7 @@
+const http = require('http');
+const https = require('https');
+const url = require('url');
 const fs = require('fs-extra');
-const request = require('request');
-const progress = require('request-progress');
 const zlib = require('zlib');
 const path = require('path');
 const nodeFs = require('original-fs');
@@ -150,13 +151,57 @@ function checkUpdate() {
 
 /**
  * Download update
- * Return request-progress : https://www.npmjs.com/package/request-progress
+ * Return Promise and have a progress callback
  */
-function downloadUpdate() {
+function downloadUpdate(progress) {
+  const source = sauConfig.update.asar;
   const writeStream = nodeFs.createWriteStream(`${sauConfig.asarPath}.gz`);
-  const downloadProgress = progress(request(sauConfig.update.asar));
-  downloadProgress.pipe(writeStream);
-  return downloadProgress;
+  const urlInfos = url.parse(source);
+
+  return new Promise((resolve, reject) => {
+    let req;
+
+
+    if (/^http:/.test(urlInfos.protocol)) {
+      req = http.request({
+    		host: urlInfos.host,
+    		port: urlInfos.port || 80,
+    		path: urlInfos.path
+      });
+    } else {
+      req = https.request({
+  			host: srcUrl.host,
+  			port: srcUrl.port || 443,
+  			path: srcUrl.path
+      });
+    }
+
+    req.on('response', res => {
+      const len = parseInt(res.headers['content-length'], 10);
+
+      let current = 0;
+
+      res.on('data', function (chunk) {
+  			writeStream.write(chunk);
+        current += chunk.length;
+        if (typeof progress === 'function') {
+          progress(current, len);
+        }
+  		});
+
+  		res.on('error', function (err) {
+  			reject(err);
+  		});
+
+  		res.on('end', function () {
+  			writeStream.end();
+  			resolve();
+      });
+
+    });
+
+    req.end();
+  });
 }
 
 module.exports = {

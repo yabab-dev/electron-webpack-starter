@@ -45,7 +45,6 @@
     "webpack-merge": "^3.0.0"
   },
   "dependencies": {
-    "fs-extra": "^2.0.0",
-    "request-progress": "^3.0.0"
+    "fs-extra": "^2.0.0"
   }
 }

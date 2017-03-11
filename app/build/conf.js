@@ -12,7 +12,7 @@ let conf = {
 
   // Modules to put in vendor bundle
   vendor: [
-    
+
   ],
 
   // Modules to exclude from webpack
@@ -26,9 +26,7 @@ conf.externals = conf.externals || [];
 conf.externals.push(
   'electron',
   'original-fs',
-  'fs-extra',
-  'request',
-  'request-progress'
+  'fs-extra'
 );
 
 module.exports = conf;
