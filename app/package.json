@@ -49,6 +49,5 @@
     "fs-extra": "^2.0.0",
     "phaser-ce": "^2.7.3",
     "phaser-debug": "^1.1.8",
-    "request-progress": "^3.0.0"
   }
 }

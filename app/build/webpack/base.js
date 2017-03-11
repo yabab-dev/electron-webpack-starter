@@ -47,6 +47,7 @@ module.exports = {
     },
   },
   module: {
+    exprContextCritical: false,
     rules: [
       { test: /pixi\.js/, use: ['expose-loader?PIXI'] },
       { test: /p2\.js/, use: ['expose-loader?p2'] },

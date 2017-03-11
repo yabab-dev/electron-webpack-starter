@@ -15,7 +15,6 @@ Personnal starter to build electron apps.
 ## Todo list
 - SAU
   - Fallback URL
-  - Replace request && request-progress
-
+  
 ## License
 See `LICENSE` file

@@ -29,9 +29,7 @@ conf.externals = conf.externals || [];
 conf.externals.push(
   'electron',
   'original-fs',
-  'fs-extra',
-  'request',
-  'request-progress'
+  'fs-extra'
 );
 
 module.exports = conf;
