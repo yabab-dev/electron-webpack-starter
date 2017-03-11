@@ -51,7 +51,6 @@
   },
   "dependencies": {
     "fs-extra": "^2.0.0",
-    "request-progress": "^3.0.0",
     "vue": "^2.2.2",
     "vue-router": "^2.3.0"
   }
