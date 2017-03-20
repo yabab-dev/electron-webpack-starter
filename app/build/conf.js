@@ -25,7 +25,6 @@ let conf = {
 // SAU dependencies
 conf.externals = conf.externals || [];
 conf.externals.push(
-  'electron',
   'original-fs',
   'fs-extra'
 );
