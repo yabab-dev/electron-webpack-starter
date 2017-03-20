@@ -11,7 +11,7 @@ module.exports = {
     node: true,
   },
   extends: [
-    'airbnb-base',
+    'semistandard',
   ],
   plugins: [
     'html',
