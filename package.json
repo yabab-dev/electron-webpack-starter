@@ -17,6 +17,7 @@
   "devDependencies": {
     "asar": "^0.13.0",
     "builtin-modules": "^1.1.1",
+    "electron": "^1.6.2",
     "electron-packager": "^8.5.2",
     "fs-extra": "^2.0.0"
   }
